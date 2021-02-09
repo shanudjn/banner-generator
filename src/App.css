@@ -6,10 +6,17 @@
   height: 40vmin;
   pointer-events: none;
 }
-/* div{
-  margin: 1rem;
-  padding: 1rem;
-} */
+.form-and-board{
+  display: flex;
+  min-height: calc(100vh - 60px);
+
+  
+}
+
+.drawingboard{
+  margin-left: 80px;
+  flex: 1 1 auto;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
