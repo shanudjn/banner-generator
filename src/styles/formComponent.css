@@ -19,6 +19,7 @@ label{
     /* display: block; */
     text-align: left;
     font-weight: 400;
+    /* margin-right:35px; */
 }
 input{
     display: block;

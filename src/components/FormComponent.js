@@ -9,7 +9,7 @@ const initialFormValues = {
     bgColor: ""
 }
 
-export default function FormComponent() {
+export default function FormComponent(props) {
     const [formValues, setFormValues] = useState(initialFormValues);
 
     const handleChange = (e) => {
@@ -21,7 +21,10 @@ export default function FormComponent() {
         })
     };
 
-    const handleFormSubmit = () => {
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log(formValues)
+        props.triggerFormSubmission(formValues)
 
     }
     return (
@@ -33,6 +36,8 @@ export default function FormComponent() {
                 <label>Enter your information</label>
 
                 <input type="text" name="name" placeholder='Name' onChange={handleChange} />
+
+
                 <input type="text" name="firstSkill" placeholder='First Skill' onChange={handleChange} />
                 <input type="text" name="secondSkill" placeholder='Second Skill' onChange={handleChange} />
                 <input type="text" name="thirdSkill" placeholder='Third Skill' onChange={handleChange} />

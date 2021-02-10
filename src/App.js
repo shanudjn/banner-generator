@@ -4,19 +4,10 @@ import NavBar from "./components/nav";
 import FormComponent from "./components/FormComponent";
 
 function App() {
-  const [formData, setFormData] = useState({
-    name: '',
-    firstSkill: '',
-    secondSkill: '',
-    thirdSkill: '',
-    bgColor: ''
-  })
 
-  function handleSubmit() {
-    console.log('hello')
-    setFormData({
 
-    })
+  function handleSubmit(formValues) {
+    console.log(formValues);
   }
 
   return (
