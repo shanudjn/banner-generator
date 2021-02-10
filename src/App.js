@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import NavBar from "./components/nav";
 import FormComponent from "./components/FormComponent";
+import BannerComponent from "./components/BannerComponent"
 
 function App() {
 
@@ -15,7 +16,8 @@ function App() {
       <NavBar />
       <div className='form-and-board'>
         <FormComponent triggerFormSubmission={handleSubmit} />
-        <div className='drawingboard'>right</div>
+        <BannerComponent />
+        {/* <div className='drawingboard'>right</div> */}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export default function FormComponent(props) {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value)
+        //console.log(name, value)
         setFormValues({
             ...formValues,
             [name]: value
@@ -36,8 +36,6 @@ export default function FormComponent(props) {
                 <label>Enter your information</label>
 
                 <input type="text" name="name" placeholder='Name' onChange={handleChange} />
-
-
                 <input type="text" name="firstSkill" placeholder='First Skill' onChange={handleChange} />
                 <input type="text" name="secondSkill" placeholder='Second Skill' onChange={handleChange} />
                 <input type="text" name="thirdSkill" placeholder='Third Skill' onChange={handleChange} />
