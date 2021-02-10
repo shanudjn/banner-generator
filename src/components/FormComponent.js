@@ -1,26 +1,45 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import '../styles/formComponent.css';
 
-class FormComponent extends Component {
-    render() {
-        return (
-            <div className="form">
-                <form>
-                    {/* <label>
+const initialFormValues = {
+    name: "",
+    firstSkill: "",
+    secondSkill: "",
+    thirdSkill: "",
+    bgColor: ""
+}
+
+export default function FormComponent() {
+    const [formValues, setFormValues] = useState(initialFormValues);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        console.log(name, value)
+        setFormValues({
+            ...formValues,
+            [name]: value
+        })
+    };
+
+    const handleFormSubmit = () => {
+
+    }
+    return (
+        <div className="form">
+            <form onSubmit={handleFormSubmit}>
+                {/* <label>
                         Name
                     </label> */}
-                    <label>Enter your information</label>
+                <label>Enter your information</label>
 
-                    <input type="text" name="name" placeholder='Name' />
-                    <input type="text" name="name" placeholder='First Skill' />
-                    <input type="text" name="name" placeholder='Second Skill' />
-                    <input type="text" name="name" placeholder='Third Skill' />
-                    <label>Choose your favorite color</label>
-                    <input type="color" id="favcolor" name="favcolor" value="#ff0000"></input>
-                    <button>Submit</button>
-                </form>
-            </div>
-        )
-    }
+                <input type="text" name="name" placeholder='Name' onChange={handleChange} />
+                <input type="text" name="firstSkill" placeholder='First Skill' onChange={handleChange} />
+                <input type="text" name="secondSkill" placeholder='Second Skill' onChange={handleChange} />
+                <input type="text" name="thirdSkill" placeholder='Third Skill' onChange={handleChange} />
+                <label>Choose your favorite color</label>
+                <input type="color" name="bgColor" onChange={handleChange} ></input>
+                <button>Submit</button>
+            </form>
+        </div>
+    )
 }
-export default FormComponent;
